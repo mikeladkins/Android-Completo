@@ -1,0 +1,132 @@
+<resources>
+    <string name="app_name">CompletoAndroid</string>
+    <string name="text_title">Completo</string>
+    <string name="button_login">Login</string>
+    <string name="button_createAccount">Create Account</string>
+    <string name="button_createCharacter">Create Character</string>
+    <string name="button_manageAccount">Manage Account</string>
+    <string name="editText_enterUsername">Enter Username</string>
+    <string name="editText_enterPassword">Enter Password</string>
+    <string name="button_confirmAccount">Confirm</string>
+    <string name="bottom_menu_profile">Profile</string>
+    <string name="bottom_menu_character_details">Character Details</string>
+    <string name="bottom_menu_keys">Keys</string>
+    <string name="bottom_menu_vault">Vault</string>
+
+    <string-array name="character_genders">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <!-- Character class/spec arrays -->
+    <string-array name="character_classes">
+        <item>Death Knight</item>
+        <item>Demon Hunter</item>
+        <item>Druid</item>
+        <item>Hunter</item>
+        <item>Mage</item>
+        <item>Monk</item>
+        <item>Paladin</item>
+        <item>Priest</item>
+        <item>Rogue</item>
+        <item>Shaman</item>
+        <item>Warlock</item>
+        <item>Warrior</item>
+    </string-array>
+    <string-array name="character_races">
+        <item>Human</item>
+        <item>Night Elf</item>
+        <item>Dwarf</item>
+        <item>Gnome</item>
+        <item>Draenei</item>
+        <item>Worgen</item>
+        <item>Void Elf</item>
+        <item>Lightforged Draenei</item>
+        <item>Dark Iron Dwarf</item>
+        <item>Kul Tiran</item>
+        <item>Mechagnome</item>
+        <item>Orc</item>
+        <item>Undead</item>
+        <item>Tauren</item>
+        <item>Troll</item>
+        <item>Blood Elf</item>
+        <item>Goblin</item>
+        <item>Nightborne</item>
+        <item>Highmountain Tauren</item>
+        <item>Mag\'har Orc</item>
+        <item>Zandalari Troll</item>
+        <item>Vulpera</item>
+        <item>Pandaren</item>
+    </string-array>
+    <string-array name="death_knight_specs">
+        <item>Blood</item>
+        <item>Frost</item>
+        <item>Unholy</item>
+    </string-array>
+    <string-array name="demon_hunter_specs">
+        <item>Havoc</item>
+        <item>Vengeance</item>
+    </string-array>
+    <string-array name="druid_specs">
+        <item>Balance</item>
+        <item>Feral</item>
+        <item>Guardian</item>
+        <item>Restoration</item>
+    </string-array>
+    <string-array name="hunter_specs">
+        <item>Beast Mastery</item>
+        <item>Marksmanship</item>
+        <item>Survival</item>
+    </string-array>
+    <string-array name="mage_specs">
+        <item>Arcane</item>
+        <item>Fire</item>
+        <item>Frost</item>
+    </string-array>
+    <string-array name="monk_specs">
+        <item>Brewmaster</item>
+        <item>Mistweaver</item>
+        <item>Windwalker</item>
+    </string-array>
+    <string-array name="paladin_specs">
+        <item>Holy</item>
+        <item>Protection</item>
+        <item>Retribution</item>
+    </string-array>
+    <string-array name="priest_specs">
+        <item>Discipline</item>
+        <item>Holy</item>
+        <item>Shadow</item>
+    </string-array>
+    <string-array name="rogue_specs">
+        <item>Assassination</item>
+        <item>Outlaw</item>
+        <item>Subtlety</item>
+    </string-array>
+    <string-array name="shaman_specs">
+        <item>Elemental</item>
+        <item>Enhancement</item>
+        <item>Restoration</item>
+    </string-array>
+    <string-array name="warlock_specs">
+        <item>Affliction</item>
+        <item>Demonology</item>
+        <item>Destruction</item>
+    </string-array>
+    <string-array name="warrior_specs">
+        <item>Arms</item>
+        <item>Fury</item>
+        <item>Protection</item>
+    </string-array>
+
+    <!-- Dungeon Names -->
+    <string-array name="dungeon_names">
+        <item>De Other Side</item>
+        <item>Halls of Atonement</item>
+        <item>Mists of Tirna Scithe</item>
+        <item>Necrotic Wake</item>
+        <item>Plaguefall</item>
+        <item>Sanguine Depths</item>
+        <item>Spires of Ascension</item>
+        <item>Theatre of Pain</item>
+    </string-array>
+</resources>

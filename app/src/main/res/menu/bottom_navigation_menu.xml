@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_item_profile"
+        android:title="Profile"
+        android:icon="@drawable/class_priest"/>
+    <item
+        android:id="@+id/menu_item_character_details"
+        android:title="Character"
+        android:icon="@drawable/class_death_knight"/>
+    <item
+        android:id="@+id/menu_item_keys"
+        android:title="Keys"
+        android:icon="@drawable/class_demon_hunter"/>
+    <item
+        android:id="@+id/menu_item_vault_progress"
+        android:title="Vault"
+        android:icon="@drawable/class_druid"/>
+</menu>
