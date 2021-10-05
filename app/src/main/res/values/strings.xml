@@ -7,6 +7,8 @@
     <string name="button_manageAccount">Manage Account</string>
     <string name="editText_enterUsername">Enter Username</string>
     <string name="editText_enterPassword">Enter Password</string>
+    <string name="hint_enter_character_name">Enter Name</string>
+    <string name="hint_enter_character_level">Enter Level</string>
     <string name="button_confirmAccount">Confirm</string>
     <string name="bottom_menu_profile">Profile</string>
     <string name="bottom_menu_character_details">Character Details</string>

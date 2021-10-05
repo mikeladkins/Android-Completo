@@ -28,6 +28,6 @@
     <!-- Key Completion Level Colors -->
     <color name="complete_plus_three">#FF13E84B</color>
     <color name="complete_plus_two">#FFA2FF00</color>
-    <color name="complete_plus_one">#FFFC8700</color>
+    <color name="complete_plus_one">#FFFFE100</color>
     <color name="complete_plus_zero">#FFF20A0A</color>
 </resources>

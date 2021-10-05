@@ -1,8 +1,6 @@
 package com.madkins.completoandroid.fragment
 
 import android.content.Context
-import android.content.res.Resources
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,12 +10,10 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.madkins.completoandroid.R
 import com.madkins.completoandroid.data.PlayerCharacter
-import com.madkins.completoandroid.viewmodel.DisplayCharactersViewModel
 import com.madkins.completoandroid.viewmodel.MainViewModel
 
 class CharactersDisplayFragment: Fragment() {
@@ -99,7 +95,7 @@ class CharactersDisplayFragment: Fragment() {
         }
 
         fun mapRaceResource(character: PlayerCharacter): String {
-            val raceMinusWhiteSpace = character.charRace.toString().replace("\\s".toRegex(), "")
+            val raceMinusWhiteSpace = character.charRace.replace("\\s".toRegex(), "")
             // Gets rid of the ' in Mag'har Orcs
             val formattedRace = raceMinusWhiteSpace.replace("'", "").lowercase()
             return "race_${formattedRace}_${character.charGender}"
@@ -122,6 +118,5 @@ class CharactersDisplayFragment: Fragment() {
         }
 
         override fun getItemCount(): Int = playerCharacters.size
-
     }
 }

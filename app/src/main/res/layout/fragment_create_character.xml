@@ -10,9 +10,10 @@
         android:id="@+id/text_character_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Enter Character Name"
-        android:singleLine="true"
         android:layout_margin="8dp"
+        android:hint="@string/hint_enter_character_name"
+        android:minHeight="48dp"
+        android:singleLine="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,9 +21,11 @@
         android:id="@+id/text_character_level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Enter Character Level"
-        android:singleLine="true"
         android:layout_margin="8dp"
+        android:hint="@string/hint_enter_character_level"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:singleLine="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_character_name" />
 
@@ -31,6 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_character_level" />
 
@@ -39,6 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner_character_race" />
 
@@ -47,6 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner_character_class" />
 
@@ -55,6 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner_character_spec" />
 
