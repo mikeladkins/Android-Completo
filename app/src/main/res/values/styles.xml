@@ -19,7 +19,7 @@
     </style>
     <style name="ListItem">
         <item name="android:shape">rectangle</item>
-        <item name="android:background">@color/card_background</item>
+        <item name="android:background">@color/list_item_background</item>
         <item name="android:strokeColor">@color/purple_200</item>
         <item name="android:strokeWidth">1</item>
     </style>

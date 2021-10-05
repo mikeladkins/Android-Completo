@@ -9,8 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="semi_transparent">#55FFFFFF</color>
     <color name="transparent">#00000000</color>
-    <color name="card_background">#FF555555</color>
-    <color name="card_border">#FF333333</color>
+    <color name="list_item_background">#FF555555</color>
+    <color name="list_item_border">#FF333333</color>
+    <color name="list_item_border_selected">#FF00FF59</color>
     <!-- Class Colors -->
     <color name="class_death_knight">#FFC41F3B</color>
     <color name="class_demon_hunter">#FFA330C9</color>
@@ -29,5 +30,4 @@
     <color name="complete_plus_two">#FFA2FF00</color>
     <color name="complete_plus_one">#FFFC8700</color>
     <color name="complete_plus_zero">#FFF20A0A</color>
-
 </resources>

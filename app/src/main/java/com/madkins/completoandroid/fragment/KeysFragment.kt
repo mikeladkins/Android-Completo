@@ -79,7 +79,7 @@ class KeysFragment: Fragment() {
 
         fun bind(key: DungeonKey) {
             this.key = key
-            iconImageView.setImageResource(R.drawable.spec_mage_fire)
+            iconImageView.setImageResource(key.dungeon.iconId)
             levelTextView.text = key.keyLevel.toString()
             nameTextView.text = key.dungeon.dungeonName
             dateTextView.text = outputFormatter.format(key.completionDate)

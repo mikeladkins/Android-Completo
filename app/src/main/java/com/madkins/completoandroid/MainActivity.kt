@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity(), CharactersDisplayFragment.Callbacks {
 
     private fun updateTitleBar(selectedCharacterName: String?) {
         val title: String = selectedCharacterName ?: "No Character Selected"
-        actionBar.title = title
+        actionBar.title = title.replaceFirstChar { it.uppercase() }
     }
 
     override fun onCharacterSelected(playerCharacter: PlayerCharacter) {
