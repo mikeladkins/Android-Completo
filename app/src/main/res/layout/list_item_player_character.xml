@@ -6,80 +6,60 @@
     android:id="@+id/list_item_player_character"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginEnd="6dp"
     android:layout_marginStart="6dp"
     android:layout_marginTop="6dp"
-    android:background="#363636">
+    android:layout_marginEnd="6dp"
+    android:background="@drawable/layout_list_item">
 
     <TextView
         android:id="@+id/list_item_text_player_name"
-        android:layout_width="63dp"
-        android:layout_height="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="test name"
+        android:text="@string/placeholder_text"
         android:textColor="#D1CACA"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/list_item_image_class_icon"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintVertical_chainStyle="packed" />
-
-    <TextView
-        android:id="@+id/list_item_text_player_spec"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="test spec"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/list_item_image_class_icon"
-        app:layout_constraintTop_toBottomOf="@id/list_item_text_player_name" />
-
-    <TextView
-        android:id="@+id/list_item_text_player_class"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="test class"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/list_item_text_player_spec"
-        app:layout_constraintTop_toBottomOf="@id/list_item_text_player_name" />
-
-    <TextView
-        android:id="@+id/list_item_text_player_race"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="text race"
-        android:textColor="#D1CACA"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/list_item_text_player_name"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@id/list_item_image_race_icon"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/list_item_text_player_level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="test level"
+        android:text="@string/placeholder_text"
         android:textColor="#D1CACA"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/list_item_text_player_class"
-        app:layout_constraintTop_toBottomOf="@id/list_item_text_player_name" />
+        app:layout_constraintStart_toEndOf="@+id/list_item_text_player_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <ImageView
+        android:id="@+id/list_item_image_race_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/list_item_image_class_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/class_death_knight"
+        android:contentDescription="@string/character_race_image_content_description" />
 
     <ImageView
         android:id="@+id/list_item_image_class_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="220dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/list_item_text_player_name"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="@drawable/class_death_knight" />
+        tools:srcCompat="@drawable/class_death_knight"
+        android:contentDescription="@string/character_class_image_content_description"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

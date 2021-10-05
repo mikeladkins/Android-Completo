@@ -5,6 +5,7 @@
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.1703125" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3109375" />
+        <entry key="app/src/main/res/drawable/layout_list_item.xml" value="0.3109375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21240942028985507" />
         <entry key="app/src/main/res/layout/dialog_fragment_create_key.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_character_details.xml" value="0.21240942028985507" />
@@ -14,7 +15,7 @@
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.21240942028985507" />
         <entry key="app/src/main/res/layout/fragment_vault.xml" value="0.21240942028985507" />
         <entry key="app/src/main/res/layout/fragment_view_characters.xml" value="0.15520833333333334" />
-        <entry key="app/src/main/res/layout/list_item_player_character.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/list_item_player_character.xml" value="0.8266199649737302" />
         <entry key="app/src/main/res/layout/list_item_player_key.xml" value="0.3371140516698173" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.2947916666666667" />
       </map>

@@ -12,6 +12,8 @@ import com.madkins.completoandroid.R
 import com.madkins.completoandroid.data.Dungeon
 import com.madkins.completoandroid.data.DungeonKey
 import com.madkins.completoandroid.viewmodel.MainViewModel
+import java.text.SimpleDateFormat
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class CreateKeyDialogFragment: DialogFragment() {
@@ -81,7 +83,7 @@ class CreateKeyDialogFragment: DialogFragment() {
                 Dungeon.mapDungeonFromString(dungeonSpinner.selectedItem.toString()),
                 1,
                 1,
-                1,
+                completionLevel,
                 date,
                 viewModel.selectedCharacter.value!!.charId,
             )

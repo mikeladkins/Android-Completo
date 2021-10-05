@@ -12,12 +12,18 @@
     <string name="bottom_menu_character_details">Character Details</string>
     <string name="bottom_menu_keys">Keys</string>
     <string name="bottom_menu_vault">Vault</string>
+    <string name="placeholder_text">Placeholder</string>
+    <string name="character_class_image_content_description">Character Class</string>
+    <string name="character_race_image_content_description">Character Race</string>
+    <string name="dungeon_image_content_description">Dungeon</string>
+
 
     <string-array name="character_genders">
         <item>Male</item>
         <item>Female</item>
     </string-array>
-    <!-- Character class/spec arrays -->
+
+    <!-- Classes -->
     <string-array name="character_classes">
         <item>Death Knight</item>
         <item>Demon Hunter</item>
@@ -32,6 +38,8 @@
         <item>Warlock</item>
         <item>Warrior</item>
     </string-array>
+
+    <!-- Races -->
     <string-array name="character_races">
         <item>Human</item>
         <item>Night Elf</item>
@@ -57,6 +65,8 @@
         <item>Vulpera</item>
         <item>Pandaren</item>
     </string-array>
+
+    <!-- Class Specs -->
     <string-array name="death_knight_specs">
         <item>Blood</item>
         <item>Frost</item>

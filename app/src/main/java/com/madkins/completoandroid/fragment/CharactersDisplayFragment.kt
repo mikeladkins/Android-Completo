@@ -1,6 +1,8 @@
 package com.madkins.completoandroid.fragment
 
 import android.content.Context
+import android.content.res.Resources
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -72,11 +74,9 @@ class CharactersDisplayFragment: Fragment() {
     // Inner Classes
     private inner class DisplayCharacterHolder(view: View): RecyclerView.ViewHolder(view), View.OnClickListener {
         val nameTextView: TextView = itemView.findViewById(R.id.list_item_text_player_name)
-        val classTextView: TextView = itemView.findViewById(R.id.list_item_text_player_class)
-        val specTextView: TextView = itemView.findViewById(R.id.list_item_text_player_spec)
         val levelTextView: TextView = itemView.findViewById(R.id.list_item_text_player_level)
-        val raceTextView: TextView = itemView.findViewById(R.id.list_item_text_player_race)
         val classIcon: ImageView = itemView.findViewById(R.id.list_item_image_class_icon)
+        val raceIcon: ImageView = itemView.findViewById(R.id.list_item_image_race_icon)
         private lateinit var playerCharacter: PlayerCharacter
 
         init {
@@ -85,14 +85,24 @@ class CharactersDisplayFragment: Fragment() {
 
         fun bind(playerCharacter: PlayerCharacter) {
             this.playerCharacter = playerCharacter
-            nameTextView.text = playerCharacter.charName
-            classTextView.text = playerCharacter.charClass.className
-            classTextView.setTextColor(getColor(requireContext(),playerCharacter.charClass.colorId))
-            specTextView.text = playerCharacter.charSpec
-            specTextView.setTextColor(getColor(requireContext(),playerCharacter.charClass.colorId))
+            nameTextView.text = playerCharacter.charName.replaceFirstChar { it.uppercase() }
+            nameTextView.setTextColor(getColor(requireContext(), playerCharacter.charClass.colorId))
             levelTextView.text = playerCharacter.charLevel.toString()
-            raceTextView.text = playerCharacter.charRace
-            classIcon.setImageResource(playerCharacter.charClass.iconId)
+            classIcon.setImageResource(resources.getIdentifier(mapSpecResource(playerCharacter), "drawable", requireActivity().packageName))
+            raceIcon.setImageResource(resources.getIdentifier(mapRaceResource(playerCharacter), "drawable", requireActivity().packageName))
+        }
+
+        fun mapSpecResource(character: PlayerCharacter): String {
+            val formattedClass = character.charClass.className.replace("\\s".toRegex(), "").lowercase()
+            val formattedSpec = (character.charSpec.replace("\\s".toRegex(), "")).lowercase()
+            return "spec_${formattedClass}_${formattedSpec}"
+        }
+
+        fun mapRaceResource(character: PlayerCharacter): String {
+            val raceMinusWhiteSpace = character.charRace.toString().replace("\\s".toRegex(), "")
+            // Gets rid of the ' in Mag'har Orcs
+            val formattedRace = raceMinusWhiteSpace.replace("'", "").lowercase()
+            return "race_${formattedRace}_${character.charGender}"
         }
 
         override fun onClick(v: View?) {

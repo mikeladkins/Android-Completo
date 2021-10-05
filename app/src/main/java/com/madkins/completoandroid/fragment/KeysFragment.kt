@@ -1,5 +1,6 @@
 package com.madkins.completoandroid.fragment
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,6 +19,9 @@ import com.madkins.completoandroid.data.Dungeon
 import com.madkins.completoandroid.data.DungeonKey
 import com.madkins.completoandroid.data.PlayerCharacter
 import com.madkins.completoandroid.viewmodel.MainViewModel
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.*
 import java.util.concurrent.Executors
 
@@ -25,6 +30,7 @@ class KeysFragment: Fragment() {
     private lateinit var displayKeysRecyclerView: RecyclerView
     private var adapter: DisplayKeysAdapter? = DisplayKeysAdapter(emptyList())
     private lateinit var keyFab: FloatingActionButton
+    private val outputFormatter = SimpleDateFormat("MMM d", Locale.ENGLISH)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -61,15 +67,30 @@ class KeysFragment: Fragment() {
         displayKeysRecyclerView.adapter = adapter
     }
 
+
+    // Inner Classes
     private inner class DisplayKeysHolder(view: View): RecyclerView.ViewHolder(view) {
+        val iconImageView: ImageView = itemView.findViewById(R.id.list_item_dungeon_icon)
+        val levelTextView: TextView = itemView.findViewById(R.id.list_item_key_level)
         val nameTextView: TextView = itemView.findViewById(R.id.list_item_key_name)
         val dateTextView: TextView = itemView.findViewById(R.id.list_item_key_date)
+        val completionTextView: TextView = itemView.findViewById(R.id.list_item_key_completion_level)
         private lateinit var key: DungeonKey
 
         fun bind(key: DungeonKey) {
             this.key = key
+            iconImageView.setImageResource(R.drawable.spec_mage_fire)
+            levelTextView.text = key.keyLevel.toString()
             nameTextView.text = key.dungeon.dungeonName
-            dateTextView.text = key.completionDate.toString()
+            dateTextView.text = outputFormatter.format(key.completionDate)
+            completionTextView.text = "+${key.advanceLevel.toString()}"
+            when(key.advanceLevel) {
+                0 -> completionTextView.setTextColor(resources.getColor(R.color.complete_plus_zero))
+                1 -> completionTextView.setTextColor(resources.getColor(R.color.complete_plus_one))
+                2 -> completionTextView.setTextColor(resources.getColor(R.color.complete_plus_two))
+                3 -> completionTextView.setTextColor(resources.getColor(R.color.complete_plus_three))
+                else -> completionTextView.setTextColor(resources.getColor(R.color.complete_plus_zero))
+            }
         }
     }
 
