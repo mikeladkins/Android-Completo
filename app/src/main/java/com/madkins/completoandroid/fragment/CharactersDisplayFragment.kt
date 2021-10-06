@@ -2,9 +2,7 @@ package com.madkins.completoandroid.fragment
 
 import android.content.Context
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat.getColor
@@ -31,6 +29,11 @@ class CharactersDisplayFragment: Fragment() {
         callbacks = context as Callbacks?
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -55,6 +58,35 @@ class CharactersDisplayFragment: Fragment() {
                 }
             }
         )
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.characters_fragment_options_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_item_create_character -> {
+                println("Creating Character")
+                requireActivity().supportFragmentManager
+                    .beginTransaction()
+                    .replace(this.id, CreateCharacterFragment())
+                    .addToBackStack(null)
+                    .commit()
+                true
+            }
+            R.id.menu_item_delete_character -> {
+                println("Deleting Character")
+                if(viewModel.selectedCharacter.value != null) {
+                    viewModel.deleteCharacter(viewModel.selectedCharacter.value!!)
+                    // Set selected character to null to force the title bar to update
+                    viewModel.selectedCharacter.value = null
+                }
+                true
+            }
+            else -> false
+        }
     }
 
     override fun onDetach() {

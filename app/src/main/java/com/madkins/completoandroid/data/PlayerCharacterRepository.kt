@@ -42,6 +42,12 @@ class PlayerCharacterRepository private constructor(context: Context) {
         }
     }
 
+    fun deletePlayerCharacter(playerCharacter: PlayerCharacter) {
+        executor.execute {
+            playerCharacterDao.deleteCharacterById(playerCharacter.charId)
+        }
+    }
+
     // Methods to initialize and get the PlayerCharacterRepository
     companion object {
         private var INSTANCE: PlayerCharacterRepository? = null

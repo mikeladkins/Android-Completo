@@ -14,6 +14,8 @@
     <string name="bottom_menu_character_details">Character Details</string>
     <string name="bottom_menu_keys">Keys</string>
     <string name="bottom_menu_vault">Vault</string>
+    <string name="menu_item_create_character">Create Character</string>
+    <string name="menu_item_delete_character">Delete Character</string>
     <string name="placeholder_text">Placeholder</string>
     <string name="character_class_image_content_description">Character Class</string>
     <string name="character_race_image_content_description">Character Race</string>

@@ -27,13 +27,13 @@ class MainActivity : AppCompatActivity(), CharactersDisplayFragment.Callbacks {
         // Reference to the title bar so we can change the text
         actionBar = supportActionBar!!
         // Some default value for the title bar
-        updateTitleBar("No Character Selected")
+        updateTitleBar(null)
 
         bottomNavBar = findViewById(R.id.bottom_navigation)
         bottomNavBar.labelVisibilityMode = LABEL_VISIBILITY_LABELED
         bottomNavBar.setOnItemSelectedListener { item ->
             when(item.itemId) {
-                R.id.menu_item_characters -> loadFragment(ProfileFragment())
+                R.id.menu_item_characters -> loadFragment(CharactersDisplayFragment())
                 R.id.menu_item_character_details -> loadFragment(CharacterDetailsFragment())
                 R.id.menu_item_keys -> loadFragment(KeysFragment())
                 //R.id.menu_item_vault_progress -> loadFragment(VaultFragment())
@@ -49,8 +49,8 @@ class MainActivity : AppCompatActivity(), CharactersDisplayFragment.Callbacks {
             }
         )
 
-        // Load Profile Fragment by default
-        loadFragment(ProfileFragment())
+        // Load Characters Display Fragment by default
+        loadFragment(CharactersDisplayFragment())
     }
 
     private fun loadFragment(fragment: Fragment) {

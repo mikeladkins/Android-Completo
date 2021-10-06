@@ -15,6 +15,9 @@ interface PlayerCharacterDao {
     @Query("SELECT * FROM playercharacter WHERE charId = :id")
     fun getCharacterById(id: Int): LiveData<PlayerCharacter?>
 
+    @Query("DELETE FROM playercharacter WHERE charId = :id")
+    fun deleteCharacterById(id: Int)
+
     @Update
     fun updateCharacter(playerCharacter: PlayerCharacter)
 

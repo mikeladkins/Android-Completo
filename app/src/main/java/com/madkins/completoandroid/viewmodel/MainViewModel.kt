@@ -19,6 +19,10 @@ class MainViewModel: ViewModel() {
         charRepo.addPlayerCharacter(characterToSave)
     }
 
+    fun deleteCharacter(characterToDelete: PlayerCharacter) {
+        charRepo.deletePlayerCharacter(characterToDelete)
+    }
+
     fun saveKey(keyToSave: DungeonKey) {
         keyRepo.addDungeonKey(keyToSave)
     }

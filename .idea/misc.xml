@@ -19,6 +19,7 @@
         <entry key="app/src/main/res/layout/list_item_player_character.xml" value="0.8266199649737302" />
         <entry key="app/src/main/res/layout/list_item_player_key.xml" value="0.3371140516698173" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/menu/characters_fragment_options_menu.xml" value="0.2947916666666667" />
       </map>
     </option>
   </component>
