@@ -26,8 +26,10 @@ class CreateKeyDialogFragment: DialogFragment() {
     private lateinit var radioButtonPlusOne: RadioButton
     private lateinit var radioButtonPlusTwo: RadioButton
     private lateinit var radioButtonPlusThree: RadioButton
+    private lateinit var editTextKeyLevel: EditText
     private lateinit var date: Date
     private val viewModel by activityViewModels<MainViewModel>()
+    private val outputFormatter = SimpleDateFormat("MMM d", Locale.ENGLISH)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,6 +61,7 @@ class CreateKeyDialogFragment: DialogFragment() {
         radioButtonPlusOne = view.findViewById(R.id.radio_button_plus_one)
         radioButtonPlusTwo = view.findViewById(R.id.radio_button_plus_two)
         radioButtonPlusThree = view.findViewById(R.id.radio_button_plus_three)
+        editTextKeyLevel = view.findViewById(R.id.edit_text_key_level)
 
         val dungeonSpinnerAdapter = ArrayAdapter(requireActivity(), android.R.layout.simple_spinner_item, resources.getStringArray(R.array.dungeon_names))
         dungeonSpinner.adapter = dungeonSpinnerAdapter
@@ -70,8 +73,7 @@ class CreateKeyDialogFragment: DialogFragment() {
 
         datePicker.addOnPositiveButtonClickListener {
             date = Date(it)
-            dateTextField.text = date.toString()
-            pickCalendarButton.text = date.toString()
+            dateTextField.text = outputFormatter.format(date)
         }
 
         pickCalendarButton.setOnClickListener {
@@ -81,7 +83,7 @@ class CreateKeyDialogFragment: DialogFragment() {
         createDungeonButton.setOnClickListener {
             val keyToSave = DungeonKey(
                 Dungeon.mapDungeonFromString(dungeonSpinner.selectedItem.toString()),
-                1,
+                Integer.parseInt(editTextKeyLevel.text.toString()),
                 1,
                 completionLevel,
                 date,

@@ -33,10 +33,10 @@ class MainActivity : AppCompatActivity(), CharactersDisplayFragment.Callbacks {
         bottomNavBar.labelVisibilityMode = LABEL_VISIBILITY_LABELED
         bottomNavBar.setOnItemSelectedListener { item ->
             when(item.itemId) {
-                R.id.menu_item_profile -> loadFragment(ProfileFragment())
+                R.id.menu_item_characters -> loadFragment(ProfileFragment())
                 R.id.menu_item_character_details -> loadFragment(CharacterDetailsFragment())
                 R.id.menu_item_keys -> loadFragment(KeysFragment())
-                R.id.menu_item_vault_progress -> loadFragment(VaultFragment())
+                //R.id.menu_item_vault_progress -> loadFragment(VaultFragment())
                 else -> loadFragment(ProfileFragment())
             }
             true

@@ -7,8 +7,11 @@
 
     <Spinner
         android:id="@+id/spinner_dungeon_name"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -18,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/button_enter_key_date"
+        app:layout_constraintBottom_toTopOf="@+id/text_selected_date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner_dungeon_name">
@@ -27,45 +30,66 @@
             android:id="@+id/radio_button_deplete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Deplete" />
+            android:text="Deplete"
+            android:textColor="@color/black" />
 
         <RadioButton
             android:id="@+id/radio_button_plus_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+1" />
+            android:text="+1"
+            android:textColor="@color/black" />
 
         <RadioButton
             android:id="@+id/radio_button_plus_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+2" />
+            android:text="+2"
+            android:textColor="@color/black" />
 
         <RadioButton
             android:id="@+id/radio_button_plus_three"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+3" />
+            android:text="+3"
+            android:textColor="@color/black" />
     </RadioGroup>
-
-    <Button
-        android:id="@+id/button_enter_key_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Select Date"
-        app:layout_constraintBottom_toTopOf="@+id/button_create_dungeon_key"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_dungeon_name" />
 
     <TextView
         android:id="@+id/text_selected_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Select a Date"
-        app:layout_constraintBottom_toTopOf="@+id/button_create_dungeon_key"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/button_enter_key_date"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button_enter_key_date"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_dungeon_name" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radio_group_key_outcome" />
+
+    <Button
+        android:id="@+id/button_enter_key_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_selected_date" />
+
+    <EditText
+        android:id="@+id/edit_text_key_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/list_item_background"
+        android:foregroundTint="#000000"
+        android:hint="Enter Key Level"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/button_create_dungeon_key"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_enter_key_date" />
 
     <Button
         android:id="@+id/button_create_dungeon_key"
@@ -75,6 +99,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_dungeon_name" />
+        app:layout_constraintTop_toBottomOf="@id/edit_text_key_level" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,7 +10,7 @@
     <string name="hint_enter_character_name">Enter Name</string>
     <string name="hint_enter_character_level">Enter Level</string>
     <string name="button_confirmAccount">Confirm</string>
-    <string name="bottom_menu_profile">Profile</string>
+    <string name="bottom_menu_characters">Characters</string>
     <string name="bottom_menu_character_details">Character Details</string>
     <string name="bottom_menu_keys">Keys</string>
     <string name="bottom_menu_vault">Vault</string>
@@ -18,7 +18,6 @@
     <string name="character_class_image_content_description">Character Class</string>
     <string name="character_race_image_content_description">Character Race</string>
     <string name="dungeon_image_content_description">Dungeon</string>
-
 
     <string-array name="character_genders">
         <item>Male</item>
