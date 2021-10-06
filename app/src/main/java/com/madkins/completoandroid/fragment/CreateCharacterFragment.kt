@@ -122,12 +122,15 @@ class CreateCharacterFragment: Fragment() {
     }
 
     private fun isDataValid(): Boolean {
-        // Check for empty fields and level is within 1-60 range
+        // Check for empty fields, 2-12 characters in name, and level is within 1-60 range
         return if (charNameEditText.text.toString().trim() == "") {
             Toast.makeText(requireActivity(), "Enter a character name", Toast.LENGTH_SHORT).show()
             false
         } else if (charLevelEditText.text.toString().trim() == "") {
             Toast.makeText(requireActivity(), "Enter a character level", Toast.LENGTH_SHORT).show()
+            false
+        } else if (charNameEditText.text.toString().length < 2 || charNameEditText.text.toString().length > 12) {
+            Toast.makeText(requireActivity(), "Character name must be between 2 and 12 characters.", Toast.LENGTH_SHORT).show()
             false
         } else if (Integer.parseInt(charLevelEditText.text.toString()) > 60 || Integer.parseInt(charLevelEditText.text.toString()) < 1) {
             Toast.makeText(requireActivity(), "Character level must be between 1 and 60", Toast.LENGTH_SHORT).show()

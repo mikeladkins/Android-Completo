@@ -70,10 +70,10 @@ class MainActivity : AppCompatActivity(), CharactersDisplayFragment.Callbacks, K
     // Callbacks
     override fun onCharacterSelected(playerCharacter: PlayerCharacter) {
         mainViewModel.selectedCharacter.value = playerCharacter
-        println("Character Selected: $playerCharacter")
+        println("---Character Selected---\n$playerCharacter")
     }
 
     override fun onDungeonSelected(key: DungeonKey) {
-        println("Dungeon Selected: ${key.dungeon.dungeonName}")
+        println("---Dungeon Selected---\n$key")
     }
 }

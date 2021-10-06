@@ -14,4 +14,13 @@ data class DungeonKey(var dungeon: Dungeon,
 {
     @PrimaryKey(autoGenerate = true)
     var keyId: Int = 0
+
+    override fun toString(): String {
+        return "Dungeon name: ${dungeon.dungeonName}\n" +
+                "Key level: $keyLevel\n" +
+                "Completion time: $completionTime\n" +
+                "Completion date: $completionDate\n" +
+                "Advance level: $advanceLevel\n" +
+                "Owner ID: $charOwnerId"
+    }
 }
