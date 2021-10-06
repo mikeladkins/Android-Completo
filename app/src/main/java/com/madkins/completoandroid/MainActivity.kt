@@ -7,6 +7,7 @@ import androidx.appcompat.app.ActionBar
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView.LABEL_VISIBILITY_LABELED
+import com.madkins.completoandroid.data.DungeonKey
 import com.madkins.completoandroid.data.PlayerCharacter
 import com.madkins.completoandroid.fragment.*
 import com.madkins.completoandroid.viewmodel.MainViewModel
@@ -15,7 +16,7 @@ import com.madkins.completoandroid.viewmodel.MainViewModel
 // Will be the only activity in the app
 // Don't know how many viewmodels we should have yet
 
-class MainActivity : AppCompatActivity(), CharactersDisplayFragment.Callbacks {
+class MainActivity : AppCompatActivity(), CharactersDisplayFragment.Callbacks, KeysFragment.Callbacks {
     private lateinit var bottomNavBar: BottomNavigationView
     private val mainViewModel by viewModels<MainViewModel>()
     private lateinit var actionBar: ActionBar
@@ -66,8 +67,13 @@ class MainActivity : AppCompatActivity(), CharactersDisplayFragment.Callbacks {
         actionBar.title = title.replaceFirstChar { it.uppercase() }
     }
 
+    // Callbacks
     override fun onCharacterSelected(playerCharacter: PlayerCharacter) {
         mainViewModel.selectedCharacter.value = playerCharacter
         println("Character Selected: $playerCharacter")
+    }
+
+    override fun onDungeonSelected(key: DungeonKey) {
+        println("Dungeon Selected: ${key.dungeon.dungeonName}")
     }
 }

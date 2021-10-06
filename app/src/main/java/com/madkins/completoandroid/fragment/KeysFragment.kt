@@ -1,5 +1,6 @@
 package com.madkins.completoandroid.fragment
 
+import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -26,11 +27,21 @@ import java.util.*
 import java.util.concurrent.Executors
 
 class KeysFragment: Fragment() {
+    interface Callbacks {
+        fun onDungeonSelected(dungeonKey: DungeonKey)
+    }
+
+    private var callbacks: Callbacks? = null
     private val viewModel by activityViewModels<MainViewModel>()
     private lateinit var displayKeysRecyclerView: RecyclerView
     private var adapter: DisplayKeysAdapter? = DisplayKeysAdapter(emptyList())
     private lateinit var keyFab: FloatingActionButton
     private val outputFormatter = SimpleDateFormat("MMM d", Locale.ENGLISH)
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        callbacks = context as Callbacks
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -62,6 +73,11 @@ class KeysFragment: Fragment() {
         }
     }
 
+    override fun onDetach() {
+        super.onDetach()
+        callbacks = null
+    }
+
     private fun updateUi(keys: List<DungeonKey>) {
         adapter = DisplayKeysAdapter(keys)
         displayKeysRecyclerView.adapter = adapter
@@ -69,13 +85,17 @@ class KeysFragment: Fragment() {
 
 
     // Inner Classes
-    private inner class DisplayKeysHolder(view: View): RecyclerView.ViewHolder(view) {
+    private inner class DisplayKeysHolder(view: View): RecyclerView.ViewHolder(view), View.OnClickListener {
         val iconImageView: ImageView = itemView.findViewById(R.id.list_item_dungeon_icon)
         val levelTextView: TextView = itemView.findViewById(R.id.list_item_key_level)
         val nameTextView: TextView = itemView.findViewById(R.id.list_item_key_name)
         val dateTextView: TextView = itemView.findViewById(R.id.list_item_key_date)
         val completionTextView: TextView = itemView.findViewById(R.id.list_item_key_completion_level)
         private lateinit var key: DungeonKey
+
+        init {
+            itemView.setOnClickListener(this)
+        }
 
         fun bind(key: DungeonKey) {
             this.key = key
@@ -91,6 +111,10 @@ class KeysFragment: Fragment() {
                 3 -> completionTextView.setTextColor(resources.getColor(R.color.complete_plus_three))
                 else -> completionTextView.setTextColor(resources.getColor(R.color.complete_plus_zero))
             }
+        }
+
+        override fun onClick(v: View?) {
+            callbacks?.onDungeonSelected(key)
         }
     }
 
