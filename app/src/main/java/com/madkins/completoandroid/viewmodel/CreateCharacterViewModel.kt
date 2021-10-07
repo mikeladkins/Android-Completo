@@ -6,7 +6,6 @@ import com.madkins.completoandroid.data.PlayerCharacterRepository
 
 class CreateCharacterViewModel: ViewModel() {
     private val playerCharacterRepo = PlayerCharacterRepository.get()
-
     fun saveCharacter(characterToSave: PlayerCharacter) {
         playerCharacterRepo.addPlayerCharacter(characterToSave)
     }

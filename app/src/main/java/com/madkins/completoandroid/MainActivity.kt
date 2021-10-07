@@ -75,5 +75,6 @@ class MainActivity : AppCompatActivity(), CharactersDisplayFragment.Callbacks, K
 
     override fun onDungeonSelected(key: DungeonKey) {
         println("---Dungeon Selected---\n$key")
+        loadFragment(DungeonDetailsFragment(key))
     }
 }
